@@ -9,7 +9,7 @@ const count = ref(0)
 
 <template>
   <h1>{{ msg }}</h1>
-  <BcButton />
+  <BcButton :label="'teste'" :color="'primary'" />
 
 
 </template>

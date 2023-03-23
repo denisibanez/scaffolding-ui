@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@denisibanez/design-system-ui": "^0.1.4",
+    "@denisibanez/design-system-ui": "^0.1.6",
     "@quasar/extras": "^1.15.11",
     "quasar": "^2.11.8",
     "sass": "1.32.12",
