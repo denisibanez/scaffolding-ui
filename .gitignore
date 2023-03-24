@@ -8,10 +8,12 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+storybook-static
 dist
 dist-ssr
 *.local
 .npmrc
+storybook-static
 
 # Editor directories and files
 .vscode/*

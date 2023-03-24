@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import {BcButton}  from '@denisibanez/design-system-ui';
+import { ref } from 'vue';
+import { BcButton } from '@denisibanez/design-system-ui';
 
-defineProps<{ msg: string }>()
+defineProps<{ msg: string }>();
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
   <BcButton :label="'teste'" :color="'primary'" />
-
-
 </template>
 
 <style scoped>
