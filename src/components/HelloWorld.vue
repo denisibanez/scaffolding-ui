@@ -8,5 +8,4 @@ import { BcButton } from '@denisibanez/design-system-ui';
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
