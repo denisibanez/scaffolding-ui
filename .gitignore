@@ -12,7 +12,6 @@ storybook-static
 dist
 dist-ssr
 *.local
-.npmrc
 storybook-static
 
 # Editor directories and files

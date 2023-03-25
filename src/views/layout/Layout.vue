@@ -47,7 +47,7 @@ import { reactive } from 'vue';
 import { QcLoading, QcSnackbar } from '@denisibanez/design-system-ui';
 
 // ROUTER
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router';
 
 // STORE
 import { storeToRefs } from 'pinia';
@@ -60,8 +60,8 @@ let leftDrawerOpen = reactive({ value: false });
 const { LOADING_STATE } = storeToRefs(useLoadingStore());
 const { SNACKBAR_STATE } = storeToRefs(useSnackbarStore());
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 // METHODS
 function toggleLeftDrawer() {
@@ -69,8 +69,8 @@ function toggleLeftDrawer() {
 }
 
 function logoff() {
-  localStorage.removeItem('ACCESS_TOKEN')
-  router.push('/login')
+  localStorage.removeItem('ACCESS_TOKEN');
+  router.push('/login');
 }
 </script>
 

@@ -24,12 +24,17 @@
           lazy-rules
           outlined
           :rules="[
-            (val) => (val !== null && val !== '') || 'Campo obrigatório'
+            (val) => (val !== null && val !== '') || 'Campo obrigatório',
           ]"
         />
 
         <div>
-          <q-btn label="Entrar" type="submit" color="primary" :loading="loading" />
+          <q-btn
+            label="Entrar"
+            type="submit"
+            color="primary"
+            :loading="loading"
+          />
           <q-btn
             label="Cancelar"
             type="reset"
@@ -64,16 +69,16 @@ import { storeToRefs } from 'pinia';
 import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
 
 // ROUTER
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router';
 
 // VARIABLES
 const user = ref(null);
 const password = ref(null);
-const myForm = ref()
+const myForm = ref();
 let loading = ref(false);
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 const { SNACKBAR_DISPATCH } = useSnackbarStore();
 const { SNACKBAR_STATE } = storeToRefs(useSnackbarStore());
@@ -88,7 +93,7 @@ onMounted(() => {
     actionLabelColor: 'white',
     textColor: 'white',
   });
-})
+});
 
 // METHODS
 function onSubmit() {
@@ -96,10 +101,10 @@ function onSubmit() {
   myForm.value.validate().then((success: any) => {
     if (success) {
       loading = ref(false);
-      localStorage.setItem('ACCESS_TOKEN', 'teste')
-      router.push('/')
+      localStorage.setItem('ACCESS_TOKEN', 'teste');
+      router.push('/');
     }
-  })
+  });
 }
 
 function onReset() {

@@ -22,7 +22,7 @@ axiosApiInstance.interceptors.request.use(
 axiosApiInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-  console.log(error, 'statusCode error');
+    console.log(error, 'statusCode error');
     if (error.response.status === 403 || error.response.status === 401) {
       /* store.dispatch('generalChangeState', {
       key: 'snackbar',
