@@ -9,7 +9,7 @@ axiosApiInstance.interceptors.request.use(
   async (config) => {
     const ACCESS_TOKEN = localStorage.getItem('ACCESS_TOKEN');
     if (ACCESS_TOKEN) {
-      config.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`;
+      config.headers.Authorization = `Bearer ${ACCESS_TOKEN}`;
     }
     return config;
   },
@@ -22,7 +22,7 @@ axiosApiInstance.interceptors.request.use(
 axiosApiInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    // console.log(error.response.status, 'statusCode error');
+  console.log(error, 'statusCode error');
     if (error.response.status === 403 || error.response.status === 401) {
       /* store.dispatch('generalChangeState', {
       key: 'snackbar',

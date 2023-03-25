@@ -13,6 +13,6 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/services/plugins/request.js"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/services/plugins/request.js", "src/views/home/Home.test.js", "src/views/layout/Layout.test.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

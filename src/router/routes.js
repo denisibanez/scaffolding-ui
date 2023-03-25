@@ -6,9 +6,20 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('@/views/layout/Layout.vue'),
+      meta: { requiresAuth: true },
       children: [
-        { path: '', component: () => import('@/views/home/Home.vue') },
+        {
+          path: '',
+          component: () => import('@/views/home/Home.vue'),
+          meta: { requiresAuth: true },
+        },
       ],
+    },
+
+    {
+      path: '/login',
+      component: () => import('@/views/login/Login.vue'),
+      meta: { requiresVisitor: true },
     },
 
     // Always leave this as last one,
@@ -16,6 +27,7 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)*',
       component: () => import('@/views/notFound/ErrorNotFound.vue'),
+      meta: { requiresVisitor: true },
     },
   ],
 });

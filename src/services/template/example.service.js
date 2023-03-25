@@ -6,7 +6,7 @@ export default {
     return await request(
       {
         method: 'get',
-        url: `${import.meta.env.VITE__BASE_PATH_EXAMPLE}mock`,
+        url: `${process.env.VITE__BASE_PATH_EXAMPLE}`,
       },
       success,
       error,
@@ -18,7 +18,7 @@ export default {
     return await request(
       {
         method: 'post',
-        url: `${import.meta.env.VITE__BASE_PATH_EXAMPLE}mock`,
+        url: `${process.env.VITE__BASE_PATH_EXAMPLE}`,
         body: payload,
       },
       success,

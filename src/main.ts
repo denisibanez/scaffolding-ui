@@ -3,7 +3,7 @@
 import { createApp } from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import { Quasar } from 'quasar';
+import { Notify, Quasar } from 'quasar';
 import router from './router/routes';
 import { createPinia } from 'pinia';
 
@@ -32,10 +32,39 @@ const myApp = createApp(App);
 const pinia = createPinia();
 
 myApp.use(Quasar, {
-  plugins: {}, // import Quasar plugins and add here
+  plugins: {
+    Notify,
+  }, // import Quasar plugins and add here
 });
 
 myApp.use(VueAxios, axios);
+
+router.beforeEach((to: any, from: any, next: any) => {
+  const authVerificate = to.matched.some(
+    (record: any) => record.meta.requiresAuth
+  );
+  const visitorsVeficate = to.matched.some(
+    (record: any) => record.meta.requiresVisitor
+  );
+  const loggedIn = localStorage.getItem('ACCESS_TOKEN');
+  if (authVerificate) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (!loggedIn) {
+      window.location.replace(`${process.env.VITE__BASE_APP}login`);
+    } else {
+      next();
+    }
+  } else if (visitorsVeficate) {
+    if (loggedIn) {
+      window.location.replace('/');
+    } else {
+      next();
+    }
+  } else {
+    next(); // make sure to always call next()!
+  }
+});
 
 myApp.use(router);
 
