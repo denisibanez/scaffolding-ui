@@ -20,6 +20,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     define: envWithProcessPrefix,
+    test: {
+      environment: "jsdom"
+    },
     plugins: [
       vue({
         template: { transformAssetUrls }

@@ -1,42 +1,28 @@
 import Layout from './Layout.vue';
 import { shallowMount } from '@vue/test-utils';
-import { PiniaVuePlugin, setActivePinia, createPinia } from 'pinia';
-import { createTestingPinia } from '@pinia/testing';
-import { createApp } from 'vue';
+import { describe, it, vi, beforeEach, test, expect } from "vitest";
+import { createTestingPinia } from "@pinia/testing";
 
-// STORE
-import { storeToRefs } from 'pinia';
-import { useLoadingStore } from '@/stores/loading/loading.store';
-import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
-
-const app = createApp({});
 
 describe('Layout Component', () => {
   let wrapper = null;
 
   beforeEach(() => {
-    const pinia = createPinia().use(PiniaVuePlugin);
-    app.use(pinia);
-    setActivePinia(pinia);
 
     wrapper = shallowMount(Layout, {
       global: {
         plugins: [
           createTestingPinia({
+            initialState: {
+            },
             stubActions: false,
-            plugins: [PiniaVuePlugin],
+            createSpy: vi.fn,
           }),
         ],
-        propsData: {
-          leftDrawerOpen: {
-            value: false,
-          },
-        },
+        propsData: {},
       },
     });
 
-    const LOADING_STATE = storeToRefs(useLoadingStore());
-    const SNACKBAR_STATE = storeToRefs(useSnackbarStore());
   });
 
   test('Layout Component renders', () => {
