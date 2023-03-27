@@ -16,3 +16,36 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+# Informations
+
+The app use:
+
+1. Vue 3
+2. Ts
+3. Vite
+4. Storybook
+5. Vitest
+6. Quasar
+7. Prettier
+8. Lint
+9. Husky
+10. Pinia
+11. Axios
+12. VueI18n
+12. VueRouter
+
+# Important commands
+
+* "npm run dev" to run app
+* "npm run build" to build app
+* "npm run lint:fix" to check and fix code errors
+* "npm run format" to format code
+* "npm run coverage to run tests with jest
+
+# To install DesignSystem
+* generate andset github token in your system variables
+* MAC OS
+* export GITHUBTOKEN="YOUR_TOKEN"
+* echo $GITHUBTOKEN
+* npm install @denisibanez/design-system-ui@latest
