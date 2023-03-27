@@ -50,7 +50,7 @@ import { QcLoading, QcSnackbar } from '@denisibanez/design-system-ui';
 import { useRouter, useRoute } from 'vue-router';
 
 // STORE
-import { storeToRefs } from 'pinia';
+import { Store, storeToRefs } from 'pinia';
 import { useLoadingStore } from '@/stores/loading/loading.store';
 import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
 

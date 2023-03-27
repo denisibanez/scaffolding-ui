@@ -71,6 +71,9 @@ import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
 // ROUTER
 import { useRouter, useRoute } from 'vue-router';
 
+// TYPES
+import QcSnackbarInterface from '@/stores/snackbar/snackbar';
+
 // VARIABLES
 const user = ref(null);
 const password = ref(null);
@@ -92,7 +95,7 @@ onMounted(() => {
     icon: 'warning',
     actionLabelColor: 'white',
     textColor: 'white',
-  });
+  }  as QcSnackbarInterface);
 });
 
 // METHODS

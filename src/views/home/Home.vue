@@ -24,11 +24,14 @@ import { storeToRefs } from 'pinia';
 import { useLoadingStore } from '@/stores/loading/loading.store';
 import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
 
+// TYPES
+import QcSnackbarInterface from '@/stores/snackbar/snackbar';
+
+// VARIABLES
 const { LOADING_DISPATCH } = useLoadingStore();
 const { SNACKBAR_DISPATCH } = useSnackbarStore();
 const { LOADING_STATE } = storeToRefs(useLoadingStore());
 
-// VARIABLES
 const loadingBtn: Ref<boolean> = ref(false);
 
 // LIFECYCLE
@@ -52,7 +55,7 @@ async function getExample() {
         icon: 'check_circle',
         actionLabelColor: 'white',
         textColor: 'white',
-      });
+      } as QcSnackbarInterface);
     },
     (e: any) => {
       console.log(e, 'ERROR');
@@ -63,7 +66,7 @@ async function getExample() {
         icon: 'warning',
         actionLabelColor: 'white',
         textColor: 'white',
-      });
+      } as QcSnackbarInterface);
     },
     () => {
       console.log('DONE');

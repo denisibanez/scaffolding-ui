@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
-    "@denisibanez/design-system-ui": "^0.1.9",
+    "@denisibanez/design-system-ui": "^0.2.5",
     "@pinia/testing": "^0.0.15",
     "@quasar/babel-preset-app": "^2.0.2",
     "@quasar/extras": "^1.15.11",

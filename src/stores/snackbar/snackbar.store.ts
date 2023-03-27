@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import QcSnackbarInterface from './snackbar';
 
 export const useSnackbarStore = defineStore('snackbar', {
   state: () => ({
@@ -9,10 +10,10 @@ export const useSnackbarStore = defineStore('snackbar', {
       icon: 'warning',
       actionLabelColor: 'white',
       textColor: 'white',
-    },
+    } as QcSnackbarInterface,
   }),
   actions: {
-    SNACKBAR_DISPATCH(payload: any) {
+    SNACKBAR_DISPATCH(payload: QcSnackbarInterface) {
       this.SNACKBAR_STATE = payload;
     },
   },
