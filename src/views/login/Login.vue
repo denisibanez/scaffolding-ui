@@ -95,7 +95,7 @@ onMounted(() => {
     icon: 'warning',
     actionLabelColor: 'white',
     textColor: 'white',
-  }  as QcSnackbarInterface);
+  } as QcSnackbarInterface);
 });
 
 // METHODS

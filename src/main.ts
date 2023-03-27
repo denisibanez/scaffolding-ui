@@ -6,6 +6,7 @@ import VueAxios from 'vue-axios';
 import { Notify, Quasar } from 'quasar';
 import router from './router/routes';
 import { createPinia } from 'pinia';
+import i18n from './locales';
 
 // Import icon libraries
 import '@quasar/extras/roboto-font/roboto-font.css';
@@ -29,16 +30,18 @@ import 'quasar/src/css/index.sass';
 import App from './App.vue';
 
 const myApp = createApp(App);
-const pinia = createPinia();
 
+// Quasar
 myApp.use(Quasar, {
   plugins: {
     Notify,
   }, // import Quasar plugins and add here
 });
 
+// Services
 myApp.use(VueAxios, axios);
 
+// router and Guard
 router.beforeEach((to: any, from: any, next: any) => {
   const authVerificate = to.matched.some(
     (record: any) => record.meta.requiresAuth
@@ -68,6 +71,12 @@ router.beforeEach((to: any, from: any, next: any) => {
 
 myApp.use(router);
 
+// Store
+const pinia = createPinia();
 myApp.use(pinia);
+
+// I18n
+myApp.use(i18n);
+
 // Assumes you have a <div id="app"></div> in your index.html
 myApp.mount('#app');

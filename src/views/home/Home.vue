@@ -1,11 +1,29 @@
 <template>
   <div class="home__wrapper q-pa-md" v-if="!LOADING_STATE">
-    <QcButton
-      label="Botao do Design System"
-      color="primary"
-      :loading="loadingBtn"
-      @click.capture="loadingBtn = !loadingBtn"
-    />
+    <div class="row">
+      <div class="col q-pa-md">
+        <QcButton
+          label="Botao do Design System"
+          color="primary"
+          :loading="loadingBtn"
+          @click.capture="loadingBtn = !loadingBtn"
+        />
+      </div>
+      <div class="col q-pa-md">
+        <q-select
+          outlined
+          v-model="selected"
+          :options="languages"
+          :option-value="'language'"
+          :option-label="'title'"
+          @update:model-value="changeLocale()"
+          label="Selecione a linguagem desejada"
+        />
+      </div>
+      <div class="col q-pa-md">
+        {{ t('test') }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,12 +45,26 @@ import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
 // TYPES
 import QcSnackbarInterface from '@/stores/snackbar/snackbar';
 
+// LIBS
+import { useI18n } from 'vue-i18n';
+import i18n from '@/locales';
+
 // VARIABLES
 const { LOADING_DISPATCH } = useLoadingStore();
 const { SNACKBAR_DISPATCH } = useSnackbarStore();
 const { LOADING_STATE } = storeToRefs(useLoadingStore());
 
 const loadingBtn: Ref<boolean> = ref(false);
+const { t } = useI18n({
+  inheritLocale: true,
+  useScope: 'local',
+});
+const selected = ref();
+
+const languages = ref([
+  { language: 'en', title: 'English' },
+  { language: 'pt-BR', title: 'Portugues' },
+]);
 
 // LIFECYCLE
 onMounted(() => {
@@ -73,5 +105,9 @@ async function getExample() {
       LOADING_DISPATCH(false);
     }
   );
+}
+
+function changeLocale() {
+  i18n.global.locale.value = selected.value.language;
 }
 </script>
