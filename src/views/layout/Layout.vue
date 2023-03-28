@@ -1,61 +1,37 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+  <div>
+    <QcLayout
+      @logoff="onLogoff"
+      @navigate="onNavigate($event)"
+    >
+      <RouterView></RouterView>
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div @click="logoff" style="cursor: pointer">Sair</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer v-model="leftDrawerOpen.value" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view />
       <QcLoading :loading="LOADING_STATE" size="xl" text="Aguarde" />
-    </q-page-container>
-
-    <QcSnackbar
-      :model="SNACKBAR_STATE.model"
-      :bgColor="SNACKBAR_STATE.bgColor"
-      :text="SNACKBAR_STATE.text"
-      :icon="SNACKBAR_STATE.icon"
-      :actionLabelColor="SNACKBAR_STATE.actionLabelColor"
-      :textColor="SNACKBAR_STATE.textColor"
-    />
-  </q-layout>
+      <QcSnackbar
+        :model="SNACKBAR_STATE.model"
+        :bgColor="SNACKBAR_STATE.bgColor"
+        :text="SNACKBAR_STATE.text"
+        :icon="SNACKBAR_STATE.icon"
+        :actionLabelColor="SNACKBAR_STATE.actionLabelColor"
+        :textColor="SNACKBAR_STATE.textColor"
+      />
+    </QcLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
-// VUE
-import { reactive } from 'vue';
-
 // DESIGN SYSTEM
-import { QcLoading, QcSnackbar } from '@denisibanez/design-system-ui';
+import { QcLoading, QcSnackbar, QcLayout } from '@denisibanez/design-system-ui';
 
 // ROUTER
 import { useRouter, useRoute } from 'vue-router';
 
 // STORE
-import { Store, storeToRefs } from 'pinia';
+import { storeToRefs } from 'pinia';
 import { useLoadingStore } from '@/stores/loading/loading.store';
 import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
 
-// VARIABLES
-let leftDrawerOpen = reactive({ value: false });
+//VARIABLES
 
 const { LOADING_STATE } = storeToRefs(useLoadingStore());
 const { SNACKBAR_STATE } = storeToRefs(useSnackbarStore());
@@ -64,13 +40,13 @@ const router = useRouter();
 const route = useRoute();
 
 // METHODS
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-
-function logoff() {
+function onLogoff() {
   localStorage.removeItem('ACCESS_TOKEN');
   router.push('/login');
+}
+
+function onNavigate(item: any) {
+  router.push(item.route);
 }
 </script>
 

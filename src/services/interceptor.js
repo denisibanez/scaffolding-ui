@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const axiosApiInstance = axios.create();
 
+
 // Request interceptor for API calls
 axiosApiInstance.interceptors.request.use(
   async (config) => {
@@ -24,34 +25,17 @@ axiosApiInstance.interceptors.response.use(
   (error) => {
     console.log(error, 'statusCode error');
     if (error.response.status === 403 || error.response.status === 401) {
-      /* store.dispatch('generalChangeState', {
-      key: 'snackbar',
-      payload: {
+      SNACKBAR_DISPATCH({
         model: true,
-        timeout: 5000,
-        bgColor: '#ca850e',
-        fontColor: '#ffffff',
-        text: (error.response.data.message) || 'Erro',
-        type: 403,
-      },
-    });
+        bgColor: 'negative',
+        text: 'Ocorreu um erro!',
+        icon: 'check_circle',
+        actionLabelColor: 'white',
+        textColor: 'white',
+      });
 
-    setTimeout(() => {
-      store.dispatch('logoff');
-    }, 6000); */
-    } else {
-      const errors = error.response.data.message || 'Erro';
-      /* store.dispatch('generalChangeState', {
-      key: 'snackbar',
-      payload: {
-        model: true,
-        timeout: 5000,
-        bgColor: '#ca850e',
-        fontColor: '#ffffff',
-        text: errors,
-        type: null,
-      },
-    });*/
+      localStorage.removeItem('ACCESS_TOKEN');
+      router.push('/login');
     }
     return Promise.reject(error);
   }

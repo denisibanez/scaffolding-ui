@@ -32,7 +32,7 @@ export default defineConfig(({ mode }) => {
       }),
 
       VueI18nPlugin({
-        include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales'),
+        include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/index'),
       }),
   
       quasar({

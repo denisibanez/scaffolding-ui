@@ -9,33 +9,36 @@
         class="q-gutter-md"
         ref="myForm"
       >
-        <q-input
-          v-model="user"
-          label="Usuário"
-          lazy-rules
-          outlined
-          :rules="[(val) => (val && val.length > 0) || 'Campo obrigatório']"
+        <QcTextfield
+        :value="user"
+        :rules="[
+          (val: any) => (val !== null && val !== '') || 'Campo obrigatório',
+        ]"
+        label="Usuário"
+        types="text"
+        @onInputChange="user = $event"
         />
 
-        <q-input
-          type="password"
-          v-model="password"
-          label="Senha"
-          lazy-rules
-          outlined
-          :rules="[
-            (val) => (val !== null && val !== '') || 'Campo obrigatório',
-          ]"
-        />
+        <QcTextfield
+            :value="password"
+            :rules="[
+              (val: any) => (val !== null && val !== '') || 'Campo obrigatório',
+            ]"
+            label="Senha"
+            types="password"
+            @onInputChange="password = $event"
+            />
 
-        <div>
-          <q-btn
+        <div class="row">
+          <QcButton
+            size="md"
             label="Entrar"
             type="submit"
             color="primary"
             :loading="loading"
           />
-          <q-btn
+          <QcButton
+            size="md"
             label="Cancelar"
             type="reset"
             color="primary"
@@ -62,7 +65,7 @@
 import { onMounted, ref } from 'vue';
 
 // DESIGN SYSTEM
-import { QcSnackbar } from '@denisibanez/design-system-ui';
+import { QcSnackbar, QcTextfield, QcButton } from '@denisibanez/design-system-ui';
 
 // STORE
 import { storeToRefs } from 'pinia';
@@ -75,8 +78,8 @@ import { useRouter, useRoute } from 'vue-router';
 import QcSnackbarInterface from '@/stores/snackbar/snackbar';
 
 // VARIABLES
-const user = ref(null);
-const password = ref(null);
+let user = ref(null);
+let password = ref(null);
 const myForm = ref();
 let loading = ref(false);
 
@@ -85,18 +88,6 @@ const route = useRoute();
 
 const { SNACKBAR_DISPATCH } = useSnackbarStore();
 const { SNACKBAR_STATE } = storeToRefs(useSnackbarStore());
-
-// LIFECYCLE
-onMounted(() => {
-  SNACKBAR_DISPATCH({
-    model: false,
-    bgColor: 'negative',
-    text: 'Erro no request!',
-    icon: 'warning',
-    actionLabelColor: 'white',
-    textColor: 'white',
-  } as QcSnackbarInterface);
-});
 
 // METHODS
 function onSubmit() {
@@ -112,6 +103,6 @@ function onSubmit() {
 
 function onReset() {
   user.value = null;
-  password.value = null;
+  password.value  = null;
 }
 </script>

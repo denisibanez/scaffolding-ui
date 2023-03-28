@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.94% </span>
+                <span class="strong">72.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>70/113</span>
+                <span class='fraction'>82/113</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.94% </span>
+                <span class="strong">72.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>70/113</span>
+                <span class='fraction'>82/113</span>
             </div>
         
             
@@ -246,10 +246,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -260,6 +267,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -270,20 +278,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -359,17 +359,17 @@ const languages = ref([
 &nbsp;
 // LIFECYCLE
 onMounted(() =&gt; {
-<span class="cstat-no" title="statement not covered" >  getExample();</span>
+  getExample();
 });
 &nbsp;
 // METHODS
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async function getExample() {</span></span>
-<span class="cstat-no" title="statement not covered" >  const payload = {};</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  LOADING_DISPATCH(true);</span>
-<span class="cstat-no" title="statement not covered" >  await example.getExample(</span>
-<span class="cstat-no" title="statement not covered" >    payload,</span>
-<span class="cstat-no" title="statement not covered" >    (response: any) =&gt; {</span>
+async function getExample() {
+  const payload = {};
+&nbsp;
+  LOADING_DISPATCH(true);
+  await example.getExample(
+    payload,
+    (response: any) =&gt; {
 <span class="cstat-no" title="statement not covered" >      console.log(response.data, 'SUCCESS');</span>
 <span class="cstat-no" title="statement not covered" >      SNACKBAR_DISPATCH({</span>
 <span class="cstat-no" title="statement not covered" >        model: true,</span>
@@ -380,7 +380,7 @@ onMounted(() =&gt; {
 <span class="cstat-no" title="statement not covered" >        textColor: 'white',</span>
 <span class="cstat-no" title="statement not covered" >      } as QcSnackbarInterface);</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    (e: any) =&gt; {</span>
+    (e: any) =&gt; {
 <span class="cstat-no" title="statement not covered" >      console.log(e, 'ERROR');</span>
 <span class="cstat-no" title="statement not covered" >      SNACKBAR_DISPATCH({</span>
 <span class="cstat-no" title="statement not covered" >        model: true,</span>
@@ -391,12 +391,12 @@ onMounted(() =&gt; {
 <span class="cstat-no" title="statement not covered" >        textColor: 'white',</span>
 <span class="cstat-no" title="statement not covered" >      } as QcSnackbarInterface);</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
-<span class="cstat-no" title="statement not covered" >    () =&gt; {</span>
+    () =&gt; {
 <span class="cstat-no" title="statement not covered" >      console.log('DONE');</span>
 <span class="cstat-no" title="statement not covered" >      LOADING_DISPATCH(false);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >  );</span>
+}
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function changeLocale() {</span></span>
 <span class="cstat-no" title="statement not covered" >  i18n.global.locale.value = selected.value.language;</span>
@@ -409,7 +409,7 @@ onMounted(() =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-27T21:31:15.432Z
+                at 2023-03-27T22:13:33.002Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

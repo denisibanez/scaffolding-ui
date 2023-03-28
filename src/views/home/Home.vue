@@ -5,6 +5,7 @@
         <QcButton
           label="Botao do Design System"
           color="primary"
+          size="md"
           :loading="loadingBtn"
           @click.capture="loadingBtn = !loadingBtn"
         />

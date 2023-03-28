@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)*',
       component: () => import('@/views/notFound/ErrorNotFound.vue'),
-      meta: { requiresVisitor: true },
+      meta: { requiresAuth: true },
     },
   ],
 });
