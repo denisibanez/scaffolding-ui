@@ -1,9 +1,6 @@
 <template>
   <div>
-    <QcLayout
-      @logoff="onLogoff"
-      @navigate="onNavigate($event)"
-    >
+    <QcLayout @logoff="onLogoff" @navigate="onNavigate($event)">
       <RouterView></RouterView>
 
       <QcLoading :loading="LOADING_STATE" size="xl" text="Aguarde" />

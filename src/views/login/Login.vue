@@ -10,24 +10,24 @@
         ref="myForm"
       >
         <QcTextfield
-        :value="user"
-        :rules="[
+          :value="user"
+          :rules="[
           (val: any) => (val !== null && val !== '') || 'Campo obrigatório',
         ]"
-        label="Usuário"
-        types="text"
-        @onInputChange="user = $event"
+          label="Usuário"
+          types="text"
+          @onInputChange="user = $event"
         />
 
         <QcTextfield
-            :value="password"
-            :rules="[
+          :value="password"
+          :rules="[
               (val: any) => (val !== null && val !== '') || 'Campo obrigatório',
             ]"
-            label="Senha"
-            types="password"
-            @onInputChange="password = $event"
-            />
+          label="Senha"
+          types="password"
+          @onInputChange="password = $event"
+        />
 
         <div class="row">
           <QcButton
@@ -65,7 +65,11 @@
 import { onMounted, ref } from 'vue';
 
 // DESIGN SYSTEM
-import { QcSnackbar, QcTextfield, QcButton } from '@denisibanez/design-system-ui';
+import {
+  QcSnackbar,
+  QcTextfield,
+  QcButton,
+} from '@denisibanez/design-system-ui';
 
 // STORE
 import { storeToRefs } from 'pinia';
@@ -103,6 +107,6 @@ function onSubmit() {
 
 function onReset() {
   user.value = null;
-  password.value  = null;
+  password.value = null;
 }
 </script>
