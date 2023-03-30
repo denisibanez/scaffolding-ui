@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.03% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>103/117</span>
+                <span class='fraction'>98/112</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.03% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>103/117</span>
+                <span class='fraction'>98/112</span>
             </div>
         
             
@@ -175,17 +175,7 @@
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -308,33 +298,36 @@
         class="q-gutter-md"
         ref="myForm"
       &gt;
-        &lt;q-input
-          v-model="user"
-          label="Usuário"
-          lazy-rules
-          outlined
-          :rules="[(val) =&gt; (val &amp;&amp; val.length &gt; 0) || 'Campo obrigatório']"
-        /&gt;
-&nbsp;
-        &lt;q-input
-          type="password"
-          v-model="password"
-          label="Senha"
-          lazy-rules
-          outlined
+        &lt;QcTextfield
+          :value="user"
           :rules="[
-            (val) =&gt; (val !== null &amp;&amp; val !== '') || 'Campo obrigatório',
-          ]"
+          (val: any) =&gt; (val !== null &amp;&amp; val !== '') || 'Campo obrigatório',
+        ]"
+          label="Usuário"
+          types="text"
+          @onInputChange="user = $event"
         /&gt;
 &nbsp;
-        &lt;div&gt;
-          &lt;q-btn
+        &lt;QcTextfield
+          :value="password"
+          :rules="[
+              (val: any) =&gt; (val !== null &amp;&amp; val !== '') || 'Campo obrigatório',
+            ]"
+          label="Senha"
+          types="password"
+          @onInputChange="password = $event"
+        /&gt;
+&nbsp;
+        &lt;div class="row"&gt;
+          &lt;QcButton
+            size="md"
             label="Entrar"
             type="submit"
             color="primary"
             :loading="loading"
           /&gt;
-          &lt;q-btn
+          &lt;QcButton
+            size="md"
             label="Cancelar"
             type="reset"
             color="primary"
@@ -361,7 +354,11 @@
 import { onMounted, ref } from 'vue';
 &nbsp;
 // DESIGN SYSTEM
-import { QcSnackbar } from '@denisibanez/design-system-ui';
+import {
+  QcSnackbar,
+  QcTextfield,
+  QcButton,
+} from '@denisibanez/design-system-ui';
 &nbsp;
 // STORE
 import { storeToRefs } from 'pinia';
@@ -374,8 +371,8 @@ import { useRouter, useRoute } from 'vue-router';
 import QcSnackbarInterface from '@/stores/snackbar/snackbar';
 &nbsp;
 // VARIABLES
-const user = ref(null);
-const password = ref(null);
+let user = ref(null);
+let password = ref(null);
 const myForm = ref();
 let loading = ref(false);
 &nbsp;
@@ -384,18 +381,6 @@ const route = useRoute();
 &nbsp;
 const { SNACKBAR_DISPATCH } = useSnackbarStore();
 const { SNACKBAR_STATE } = storeToRefs(useSnackbarStore());
-&nbsp;
-// LIFECYCLE
-onMounted(() =&gt; {
-  SNACKBAR_DISPATCH({
-    model: false,
-    bgColor: 'negative',
-    text: 'Erro no request!',
-    icon: 'warning',
-    actionLabelColor: 'white',
-    textColor: 'white',
-  } as QcSnackbarInterface);
-});
 &nbsp;
 // METHODS
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function onSubmit() {</span></span>
@@ -421,7 +406,7 @@ onMounted(() =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-27T22:13:33.002Z
+                at 2023-03-30T15:11:02.939Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
