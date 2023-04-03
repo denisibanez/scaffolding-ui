@@ -80,7 +80,6 @@ import QcSnackbarInterface from '@/stores/snackbar/snackbar';
 // AXIOS
 import axios from 'axios';
 
-
 // VARIABLES
 let user = ref(null);
 let password = ref(null);
@@ -95,7 +94,8 @@ function onSubmit() {
   loading = ref(true);
   myForm.value.validate().then((success: any) => {
     if (success) {
-      axios.post(`${process.env.VITE__BASE_PATH_EXAMPLE}/api/v1/test`)
+      axios
+        .post(`${process.env.VITE__BASE_PATH_EXAMPLE}/api/v1/test`)
         .then(function (response) {
           // handle success
           console.log(response);
