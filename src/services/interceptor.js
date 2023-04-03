@@ -37,7 +37,7 @@ axiosApiInstance.interceptors.response.use(
       });
 
       localStorage.removeItem('ACCESS_TOKEN');
-      window.location.replace('/sdsdf')
+      window.location.replace('/sdsdf');
     }
     return Promise.reject(error);
   }

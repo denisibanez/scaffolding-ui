@@ -1,9 +1,18 @@
 <template>
   <div
-    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
+    class="master__wrapper fullscreen text-white text-center q-pa-md flex flex-center column"
   >
-    <div class="q-pa-md bg-white rounded-borders" style="max-width: 400px">
-      <q-form
+    <div class="master__brand">
+      <img src="@/assets/img/logo.png" alt="">
+    </div>
+
+    <div class="q-pa-md bg-white rounded-borders" style="width: 310px">
+      <div>
+        <p class="q-pa-lg master__title">Seja bem-vindo</p>
+      </div>
+     
+      <div class="master__boxcontent">
+        <q-form
         @submit="onSubmit"
         @reset="onReset"
         class="q-gutter-md"
@@ -47,6 +56,7 @@
           />
         </div>
       </q-form>
+      </div>
     </div>
 
     <QcSnackbar
@@ -62,7 +72,7 @@
 
 <script setup lang="ts">
 // VUE
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
 // DESIGN SYSTEM
 import {
@@ -81,6 +91,9 @@ import { useRouter, useRoute } from 'vue-router';
 // TYPES
 import QcSnackbarInterface from '@/stores/snackbar/snackbar';
 
+// AXIOS
+import axios from 'axios';
+
 // VARIABLES
 let user = ref(null);
 let password = ref(null);
@@ -98,9 +111,28 @@ function onSubmit() {
   loading = ref(true);
   myForm.value.validate().then((success: any) => {
     if (success) {
-      loading = ref(false);
-      localStorage.setItem('ACCESS_TOKEN', 'teste');
-      router.push('/');
+      axios.post(`${process.env.VITE__BASE_PATH_EXAMPLE}/api/v1/test`)
+        .then(function (response) {
+          // handle success
+          console.log(response);
+          localStorage.setItem('ACCESS_TOKEN', 'teste');
+          router.push('/');
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+          SNACKBAR_DISPATCH({
+            model: true,
+            bgColor: 'negative',
+            text: 'Erro no request!',
+            icon: 'warning',
+            actionLabelColor: 'white',
+            textColor: 'white',
+          } as QcSnackbarInterface);
+        })
+        .finally(function () {
+          loading = ref(false);
+        });
     }
   });
 }
@@ -110,3 +142,23 @@ function onReset() {
   password.value = null;
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/global';
+
+  .master {
+    &__wrapper{
+      background: $primary;
+    }
+
+    &__brand  {
+      img{
+        max-width: 200px;
+      }
+    }
+
+    &__title {
+      @include font-format($transform: 'none', $color: $black, $size: 24px,  $weight: 500)
+    }
+  }
+</style>

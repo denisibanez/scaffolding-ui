@@ -6,7 +6,7 @@ export default {
     return await request(
       {
         method: 'get',
-        url: `${process.env.VITE__BASE_PATH_EXAMPLE}`,
+        url: `${process.env.VITE__BASE_PATH_EXAMPLE}/api/v1/test`,
       },
       success,
       error,
@@ -18,7 +18,7 @@ export default {
     return await request(
       {
         method: 'post',
-        url: `${process.env.VITE__BASE_PATH_EXAMPLE}`,
+        url: `${process.env.VITE__BASE_PATH_EXAMPLE}/api/v1/test`,
         body: payload,
       },
       success,
