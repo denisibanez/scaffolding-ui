@@ -1,4 +1,7 @@
-// import store from '@/store/index';
+// STORE
+import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
+
+const { SNACKBAR_DISPATCH } = useSnackbarStore();
 
 import axios from 'axios';
 
