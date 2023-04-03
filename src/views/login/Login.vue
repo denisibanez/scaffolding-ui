@@ -1,18 +1,9 @@
 <template>
   <div
-    class="master__wrapper fullscreen text-white text-center q-pa-md flex flex-center column"
+    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
   >
-    <div class="master__brand">
-      <img src="@/assets/img/logo.png" alt="">
-    </div>
-
-    <div class="q-pa-md bg-white rounded-borders" style="width: 310px">
-      <div>
-        <p class="q-pa-lg master__title">Seja bem-vindo</p>
-      </div>
-     
-      <div class="master__boxcontent">
-        <q-form
+    <div class="q-pa-md bg-white rounded-borders" style="max-width: 400px">
+      <q-form
         @submit="onSubmit"
         @reset="onReset"
         class="q-gutter-md"
@@ -56,7 +47,6 @@
           />
         </div>
       </q-form>
-      </div>
     </div>
 
     <QcSnackbar
@@ -72,40 +62,34 @@
 
 <script setup lang="ts">
 // VUE
-import { ref } from 'vue';
-
+import { onMounted, ref } from 'vue';
 // DESIGN SYSTEM
 import {
   QcSnackbar,
   QcTextfield,
   QcButton,
 } from '@denisibanez/design-system-ui';
-
 // STORE
 import { storeToRefs } from 'pinia';
 import { useSnackbarStore } from '@/stores/snackbar/snackbar.store';
-
 // ROUTER
 import { useRouter, useRoute } from 'vue-router';
-
 // TYPES
 import QcSnackbarInterface from '@/stores/snackbar/snackbar';
 
 // AXIOS
 import axios from 'axios';
 
+
 // VARIABLES
 let user = ref(null);
 let password = ref(null);
 const myForm = ref();
 let loading = ref(false);
-
 const router = useRouter();
 const route = useRoute();
-
 const { SNACKBAR_DISPATCH } = useSnackbarStore();
 const { SNACKBAR_STATE } = storeToRefs(useSnackbarStore());
-
 // METHODS
 function onSubmit() {
   loading = ref(true);
@@ -142,23 +126,3 @@ function onReset() {
   password.value = null;
 }
 </script>
-
-<style lang="scss" scoped>
-@import '@/assets/scss/global';
-
-  .master {
-    &__wrapper{
-      background: $primary;
-    }
-
-    &__brand  {
-      img{
-        max-width: 200px;
-      }
-    }
-
-    &__title {
-      @include font-format($transform: 'none', $color: $black, $size: 24px,  $weight: 500)
-    }
-  }
-</style>
