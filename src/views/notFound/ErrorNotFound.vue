@@ -1,29 +1,38 @@
 <template>
-  <div
-    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
-  >
-    <div>
-      <div style="font-size: 30vh">404</div>
+  <div class="bg-primary fullscreen text-white">
+    <div flex flex-end class="q-pa-sm">
+      <TranslateSelector></TranslateSelector>
+    </div>
+    <div class="bg-primary text-white text-center q-pa-md flex flex-center">
+      <div>
+        <div style="font-size: 30vh">404</div>
 
-      <div class="text-h2" style="opacity: 0.4">Oops. Erro...</div>
+        <div class="text-h2" style="opacity: 0.4">
+          {{ t('notFound.error') }}
+        </div>
 
-      <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
-        unelevated
-        to="/"
-        label="Go Home"
-        no-caps
-      />
+        <q-btn
+          class="q-mt-xl"
+          color="white"
+          text-color="primary"
+          unelevated
+          to="/"
+          :label="t('notFound.back')"
+          no-caps
+        />
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script setup>
+// COMPONENTS
+import TranslateSelector from '@/components/translate/TranslateSelector.vue';
+// LIBS
+import { useI18n } from 'vue-i18n';
 
-export default defineComponent({
-  name: 'ErrorNotFound',
+const { t } = useI18n({
+  inheritLocale: true,
+  useScope: 'local',
 });
 </script>

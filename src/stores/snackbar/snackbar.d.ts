@@ -5,4 +5,5 @@ export default interface QcSnackbarInterface {
   icon: string;
   actionLabelColor: string;
   textColor: string;
+  closeLabel: string;
 }

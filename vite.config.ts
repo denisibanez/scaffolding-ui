@@ -23,14 +23,23 @@ export default defineConfig(({ mode }) => {
 
   return {
     define: envWithProcessPrefix,
+    rollupOptions: {
+      input: 'src/main.ts',
+      format: 'system',
+      preserveEntrySignatures: true
+    },
+    base: 'http://localhost:3000',
     test: {
       environment: "jsdom"
     },
     plugins: [
       vue({
-        template: { transformAssetUrls }
+        template: {
+          transformAssetUrls: {
+            base: '/src'
+          }
+        }
       }),
-
       VueI18nPlugin({
         include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/index'),
       }),

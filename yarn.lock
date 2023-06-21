@@ -990,10 +990,10 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@denisibanez/design-system-ui@^0.3.2":
-  version "0.3.2"
-  resolved "https://npm.pkg.github.com/download/@denisibanez/design-system-ui/0.3.2/bf0d8f5488d38fb0e0e2b74b04c3b06eb3a2e55e"
-  integrity sha512-7TZz3cYL6n0sya5mvvKP82N5Z2SRrKIuIXz7q5oOnKzIzeHuMCs+miY77sVpjSGA1WjMUo86MJvLttkCJwhbtQ==
+"@denisibanez/design-system-ui@^0.3.3":
+  version "0.3.3"
+  resolved "https://npm.pkg.github.com/download/@denisibanez/design-system-ui/0.3.3/58b6b9e71cfad9263a0f5103c770eb360a9a2870#58b6b9e71cfad9263a0f5103c770eb360a9a2870"
+  integrity sha512-5VjGLir4l/YDij0YDhVT0lzvDj3CcR7LwC38KGk2PWTc0c6LDfNXfxkTy8iXO2RrdDQY5LrfNZfPzJa8M+a5Zw==
   dependencies:
     "@babel/preset-env" "^7.20.2"
     "@quasar/extras" "^1.15.11"
@@ -1128,7 +1128,7 @@
 
 "@eslint/eslintrc@^1.2.0":
   version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.4.1.tgz#af58772019a2d271b7e2d4c23ff4ddcba3ccfb3e"
+  resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.4.1.tgz"
   integrity sha512-XXrH9Uarn0stsyldqDYq8r++mROmWRI1xKMXa640Bb//SY1+ECYX6VzT6Lcx5frD0V30XieqJ0oX9I2Xj5aoMA==
   dependencies:
     ajv "^6.12.4"
@@ -1214,7 +1214,7 @@
 
 "@intlify/eslint-plugin-vue-i18n@^2.0.0":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@intlify/eslint-plugin-vue-i18n/-/eslint-plugin-vue-i18n-2.0.0.tgz#7308327452742c07e4aef8735f6a4b17cefd58f5"
+  resolved "https://registry.npmjs.org/@intlify/eslint-plugin-vue-i18n/-/eslint-plugin-vue-i18n-2.0.0.tgz"
   integrity sha512-ECBD0TvQNa56XKyuM6FPIGAAl7MP6ODcgjBQJrzucNxcTb8fYTWmZ+xgBuvmvAtA0iE0D4Wp18UMild2N0bGyw==
   dependencies:
     "@eslint/eslintrc" "^1.2.0"
@@ -2773,12 +2773,7 @@ eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3.0:
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz"
   integrity sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==
 
-eslint-visitor-keys@^3.0.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.0.tgz#c7f0f956124ce677047ddbc192a68f999454dedc"
-  integrity sha512-HPpKPUBQcAsZOsHAFwTtIKcYlCje62XB7SEAcxjtmW6TD1WVpkS6i6/hOVtTZIl4zGj/mBqpFVGvaDneik+VoQ==
-
-eslint-visitor-keys@^3.3.0:
+eslint-visitor-keys@^3.0.0, eslint-visitor-keys@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
@@ -3314,7 +3309,7 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3, is-glob@~4.0.1:
 
 is-language-code@^3.1.0:
   version "3.1.0"
-  resolved "https://registry.yarnpkg.com/is-language-code/-/is-language-code-3.1.0.tgz#b2386b49227e7010636f16d0c2c681ca40136ab5"
+  resolved "https://registry.npmjs.org/is-language-code/-/is-language-code-3.1.0.tgz"
   integrity sha512-zJdQ3QTeLye+iphMeK3wks+vXSRFKh68/Pnlw7aOfApFSEIOhYa8P9vwwa6QrImNNBMJTiL1PpYF0f4BxDuEgA==
   dependencies:
     "@babel/runtime" "^7.14.0"
@@ -3576,7 +3571,7 @@ jsonc-eslint-parser@^1.0.1:
 
 jsonc-eslint-parser@^2.0.0:
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/jsonc-eslint-parser/-/jsonc-eslint-parser-2.2.0.tgz#01ec9933dc3cc8302abb0c29884bf854c4f627e4"
+  resolved "https://registry.npmjs.org/jsonc-eslint-parser/-/jsonc-eslint-parser-2.2.0.tgz"
   integrity sha512-x5QjzBOORd+T2EjErIxJnkOEbLVEdD1ILEeBbIJt8Eq/zUn7P7M8qdnWiNVBK5f8oxnJpc6SBHOeeIEl/swPjg==
   dependencies:
     acorn "^8.5.0"
@@ -4438,6 +4433,11 @@ signal-exit@^3.0.2, signal-exit@^3.0.7:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
+single-spa-vue@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/single-spa-vue/-/single-spa-vue-2.5.1.tgz"
+  integrity sha512-Vw0xPs7F9vJd7ZN9gSvkipYfStAOUmke2oeheecK6hpBhLhDCx9uU2GcXC/pL6KuLDom+pZOAZxTg6UdI7Toew==
+
 slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/slash/-/slash-3.0.0.tgz"
@@ -5082,7 +5082,7 @@ yaml-eslint-parser@^0.3.2:
 
 yaml-eslint-parser@^1.0.0:
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/yaml-eslint-parser/-/yaml-eslint-parser-1.2.0.tgz#b1a6ce4bd5111596f57a9213ec9c0dd1d0ac7e61"
+  resolved "https://registry.npmjs.org/yaml-eslint-parser/-/yaml-eslint-parser-1.2.0.tgz"
   integrity sha512-OmuvQd5lyIJWfFALc39K5fGqp0aWNc+EtyhVgcQIPZaUKMnTb7An3RMp+QJizJ/x0F4kpgTNe6BL/ctdvoIwIg==
   dependencies:
     eslint-visitor-keys "^3.0.0"

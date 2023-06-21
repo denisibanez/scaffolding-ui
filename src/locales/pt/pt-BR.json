@@ -1,4 +1,82 @@
 {
-  "test": "Esse é um teste!"
- }
+  "home": {
+    "filter": {
+      "label": "Filtro aqui",
+      "filter": "Filtrar"
+    },
+    "table": {
+      "pagination": {
+        "recordsPerPage": "Itens por página",
+        "allRecords": "Todos"
+      },
+      "headers":{
+        "dessert": "Sobremesa (100g porção)",
+        "calories": "Calorias (g)",
+        "fat": "Gorduras (g)",
+        "carbs": "Carboidratos (g)",
+        "protein": "Proteína (g)",
+        "sodium": "Sódio (g)",
+        "calcium": "Cálcio (%)",
+        "iron": "Ferro (%)"
+      },
+      "search": "Buscar",
+      "csv": "Gerar relatório",
+      "failCsv": "Ocorreu um erro no relatório"
+    },
+    "feedback": {
+      "genericSuccess": "Sucesso no request!",
+      "genericError": "Erro no request!"
+    }
+  },
+  "login": {
+    "welcome": "Seja bem-vindo",
+    "close": "Fechar",
+    "form": {
+      "signIn": {
+        "user": "Usuário *",
+        "password": "Senha *",
+        "changePassword": "Alterar Senha",
+        "signin": "Entrar",
+        "forgetPassword": "Esqueci minha senha",
+        "clean": "Limpar"
+      },
+      "changePassword":{
+        "user": "Usuário *",
+        "password": "Senha *",
+        "newPassword": "Nova Senha *",
+        "confirmPassword": "Confirmar senha *",
+        "save": "Salvar",
+        "clean": "Limpar",
+        "title": "Alterar senha"
+      },
+      "feedback": {
+        "passwordChanged": "Sua senha foi alterada com sucesso!",
+        "genericError": "Erro no request!",
+        "notHaveUser": "Preencha  o campo usuário!",
+        "genericSuccess": "Sucesso no request!",
+        "required": "Campo obrigatório",
+        "passwordNotMatch": "Senhas não batem. Verifique o valor digitado.",
+        "receiveMail": "Voce receberá um e-mail para resetar sua senha!"
+      }
+    }
+  },
+  "notFound": {
+    "error": "Página não encontrada",
+    "back": "Voltar para home"
+  },
+  "interceptor": {
+    "genericError": "Erro no request!"
+  },
+  "layout": {
+    "menu": {
+      "home": "Esse é um item do menu"
+    },
+    "optionsMenu": {
+      "logoff": "Sair",
+      "subLevel": "Item com submenu",
+      "test": "Teste"
+    },
+    "waiting": "Aguarde..."
+  }
+}
  

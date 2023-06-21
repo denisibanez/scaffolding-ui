@@ -10,6 +10,7 @@ export const useSnackbarStore = defineStore('snackbar', {
       icon: 'warning',
       actionLabelColor: 'white',
       textColor: 'white',
+      closeLabel: 'Fechar',
     } as QcSnackbarInterface,
   }),
   actions: {

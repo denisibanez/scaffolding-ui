@@ -1,3 +1,81 @@
 {
- "test": "This is a test!"
+  "home": {
+    "filter": {
+      "label": "Filter here",
+      "filter": "Filter"
+    },
+    "table": {
+      "pagination": {
+        "recordsPerPage": "Items per page",
+        "allRecords": "All"
+      },
+      "headers":{
+        "dessert": "Dessert (100g portion)",
+        "calories": "Calories (g)",
+        "fat": "Fats (g)",
+        "carbs": "Carbs (g)",
+        "protein": "Protein (g)",
+        "sodium": "Sodium (g)",
+        "calcium": "Calcium (%)",
+        "iron": "Iron (%)"
+      },
+      "search": "Search",
+      "csv": "Generate report",
+      "failCsv": "An error occurred in the report"
+    },
+    "feedback": {
+      "genericSuccess": "Request success!",
+      "genericError": "Request error!"
+    }
+  },
+  "login": {
+    "welcome": "Welcome",
+    "close": "Close",
+    "form": {
+      "signIn": {
+        "user": "User *",
+        "password": "Password *",
+        "changePassword": "Turn Password",
+        "signin": "Sign in",
+        "forgetPassword": "I forgot my password",
+        "clean": "Clean"
+      },
+      "changePassword":{
+        "user": "User *",
+        "password": "Password *",
+        "newPassword": "New Password *",
+        "confirmPassword": "Confirm password *",
+        "save": "Save",
+        "clean": "Clean",
+        "title": "Change password"
+      },
+      "feedback": {
+        "passwordChanged": "Your password has been successfully changed!",
+        "genericError": "Error in request!",
+        "notHaveUser": "Please fill in the user field!",
+        "genericSuccess": "Request success!",
+        "required": "Required field",
+        "passwordNotMatch": "Passwords not match!",
+        "receiveMail": "You will receive an email to reset your password!"
+      }
+    }
+  },
+  "notFound": {
+    "error": "Page not found",
+    "back": "Back home"
+  },
+  "interceptor": {
+    "genericError": "Request error!"
+  },
+  "layout": {
+    "menu": {
+      "home": "This is a menu item"
+    },
+    "optionsMenu": {
+      "logoff": "Logout",
+      "subLevel": "Item  submenu",
+      "test": "Test"
+    },
+    "waiting": "Wait..."
+  }
 }

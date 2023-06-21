@@ -73,6 +73,7 @@ myApp.use(router);
 
 // Store
 const pinia = createPinia();
+
 myApp.use(pinia);
 
 // I18n
@@ -80,3 +81,5 @@ myApp.use(i18n);
 
 // Assumes you have a <div id="app"></div> in your index.html
 myApp.mount('#app');
+
+export default pinia;

@@ -29,6 +29,7 @@ axiosApiInstance.interceptors.response.use(
     if (error.response.status === 403 || error.response.status === 401) {
       SNACKBAR_DISPATCH({
         model: true,
+        closeLabel: t('login.form.close'),
         bgColor: 'negative',
         text: 'Ocorreu um erro!',
         icon: 'check_circle',
@@ -37,7 +38,7 @@ axiosApiInstance.interceptors.response.use(
       });
 
       localStorage.removeItem('ACCESS_TOKEN');
-      window.location.replace('/sdsdf');
+      window.location.replace('/login');
     }
     return Promise.reject(error);
   }
