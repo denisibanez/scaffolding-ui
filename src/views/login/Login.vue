@@ -78,7 +78,10 @@
               </div>
 
               <div class="col flex justify-end">
-                <button type="reset" class="denisibanez__text denisibanez__reset">
+                <button
+                  type="reset"
+                  class="denisibanez__text denisibanez__reset"
+                >
                   {{ t('login.form.signIn.clean') }}
                 </button>
               </div>
@@ -106,7 +109,11 @@
 import { computed, ref } from 'vue';
 
 // DESIGN SYSTEM
-import { QcSnackbar, QcTextfield, QcButton } from '@denisibanez/design-system-ui';
+import {
+  QcSnackbar,
+  QcTextfield,
+  QcButton,
+} from '@denisibanez/design-system-ui';
 
 // COMPONENTS
 import DialogChangePassword from '@/components/dialogs/dialogChagePassword/DialogChangePassword.vue';
