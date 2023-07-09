@@ -34,9 +34,7 @@ const active = ref('');
 
 onMounted(() => {
   const conditional: any = localStorage.getItem('language');
-  i18n.global.locale.value = conditional
-    ? conditional
-    : 'pt';
+  i18n.global.locale.value = conditional ? conditional : 'pt';
   active.value = i18n.global.locale.value === 'pt' ? 'active-br' : 'active-en';
 });
 
