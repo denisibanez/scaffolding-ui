@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => {
       format: 'system',
       preserveEntrySignatures: true
     },
-    base: 'http://localhost:3000',
+    base: 'https://scaffolding-ui.vercel.app/',
     test: {
       environment: "jsdom"
     },
