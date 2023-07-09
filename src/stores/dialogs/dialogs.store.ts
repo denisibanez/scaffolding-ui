@@ -11,7 +11,7 @@ export const useDialogsStore = defineStore('Dialogs', {
   },
   actions: {
     DIALOGS_DISPATCH(payload: DIALOG_STORE) {
-      this[payload.key] = payload.value;
+      this.DIALOG_CHANGE_PASSWORD_STATE = payload.value;
     },
   },
 });

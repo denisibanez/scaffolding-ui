@@ -1,0 +1,1 @@
+declare module '@denisibanez/design-system-ui'

@@ -33,8 +33,9 @@ import { onMounted, ref } from 'vue';
 const active = ref('');
 
 onMounted(() => {
-  i18n.global.locale.value = localStorage.getItem('language')
-    ? localStorage.getItem('language')
+  const conditional: any = localStorage.getItem('language');
+  i18n.global.locale.value = conditional
+    ? conditional
     : 'pt';
   active.value = i18n.global.locale.value === 'pt' ? 'active-br' : 'active-en';
 });
